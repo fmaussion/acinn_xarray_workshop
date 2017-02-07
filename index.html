@@ -12029,8 +12029,8 @@ a.anchor-link {
 array([[1, 3, 9],
        [2, 8, 4]])
 Coordinates:
-  * lat      (lat) int64 1 2
-  * lon      (lon) int64 11 12 13</pre>
+  * lon      (lon) int64 11 12 13
+  * lat      (lat) int64 1 2</pre>
 </div>
 
 </div>
@@ -17141,26 +17141,17 @@ oiwIgiAIgiAIPkiiLAiCIAiCIAg+/H91KxJ/hT4OmQAAAABJRU5ErkJggg==
 </div>
 
 </div></section><section>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Example:-EOFS">Example: EOFS<a class="anchor-link" href="#Example:-EOFS">&#182;</a></h3><p>Taken from: <a href="http://ajdawson.github.io/eofs/examples/nao_xarray.html">http://ajdawson.github.io/eofs/examples/nao_xarray.html</a></p>
-
-</div>
-</div>
-</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[27]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Plot the leading EOF expressed as covariance in the European/Atlantic domain.</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Leading EOF expressed as covariance in the European/Atlantic domain</span>
 <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">axes</span><span class="p">(</span><span class="n">projection</span><span class="o">=</span><span class="n">ccrs</span><span class="o">.</span><span class="n">Orthographic</span><span class="p">(</span><span class="n">central_longitude</span><span class="o">=-</span><span class="mi">20</span><span class="p">,</span> <span class="n">central_latitude</span><span class="o">=</span><span class="mi">60</span><span class="p">))</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">coastlines</span><span class="p">()</span> <span class="p">;</span> <span class="n">ax</span><span class="o">.</span><span class="n">set_global</span><span class="p">()</span>
-<span class="n">eof1</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">contourf</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">levels</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">75</span><span class="p">,</span> <span class="mi">75</span><span class="p">,</span> <span class="mi">11</span><span class="p">),</span> <span class="n">cmap</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">RdBu_r</span><span class="p">,</span>
-                         <span class="n">transform</span><span class="o">=</span><span class="n">ccrs</span><span class="o">.</span><span class="n">PlateCarree</span><span class="p">(),</span> <span class="n">add_colorbar</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">eof1</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">contourf</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">levels</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">75</span><span class="p">,</span> <span class="mi">75</span><span class="p">,</span> <span class="mi">11</span><span class="p">),</span> 
+                         <span class="n">cmap</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">RdBu_r</span><span class="p">,</span> <span class="n">add_colorbar</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+                         <span class="n">transform</span><span class="o">=</span><span class="n">ccrs</span><span class="o">.</span><span class="n">PlateCarree</span><span class="p">())</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;EOF1 expressed as covariance&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">);</span>
 </pre></div>
 
@@ -23505,15 +23496,15 @@ Data variables:
     ZNU                  (time, bottom_top) float32 0.9965 ...
     ZNW                  (time, bottom_top) float32 0.9965 ...
     ZS                   (soil_layers) float32 0.15 0.475 1.1
-    THETA                (time, bottom_top, south_north, west_east) float32 300.659 ...
     WS                   (time, bottom_top, south_north, west_east) float32 6.89276 ...
-    PRCP                 (time, south_north, west_east) float32 nan ...
-    SLP                  (time, south_north, west_east) float32 1009.71 ...
-    T2C                  (time, south_north, west_east) float32 28.5587 ...
-    Z                    (time, bottom_top, south_north, west_east) float32 30.0786 ...
     GEOPOTENTIAL         (time, bottom_top, south_north, west_east) float32 295.071 ...
+    SLP                  (time, south_north, west_east) float32 1009.71 ...
+    Z                    (time, bottom_top, south_north, west_east) float32 30.0786 ...
+    T2C                  (time, south_north, west_east) float32 28.5587 ...
     PRESSURE             (time, bottom_top, south_north, west_east) float32 100619.0 ...
+    THETA                (time, bottom_top, south_north, west_east) float32 300.659 ...
     TK                   (time, bottom_top, south_north, west_east) float32 301.19 ...
+    PRCP                 (time, south_north, west_east) float32 nan ...
     PRCP_NC              (time, south_north, west_east) float32 nan ...
     PRCP_C               (time, south_north, west_east) float32 nan ...
 Attributes:
